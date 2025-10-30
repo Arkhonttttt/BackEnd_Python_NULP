@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список Працівників</title>
+</head>
+<body>
+    <h1>Наші Працівники</h1>
+
+    <ul>
+        {% for emp in employees %}
+            <li>{{ emp.first_name }} {{ emp.last_name }} </li>
+            <p>
+                <strong>Посада:</strong> {{ emp.position.position_name }} <br>
+
+                <strong>Відділ:</strong> {{ emp.department.department_id }} <br>
+
+                <strong>Зарплатня:</strong> {{ emp.wage.total_sum }} dol <br>
+
+                <strong>Email:</strong> {{ emp.email }}
+            </p>
+        {% empty %}
+            <li>Працівників не знайдено.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
